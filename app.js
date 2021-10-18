@@ -12,8 +12,6 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.static("public"));
 
-let posts = [];
-
 mongoose.connect("mongodb://localhost:27017/blogDB", {useNewUrlParser: true}); 
 
 const postSchema = {
@@ -25,9 +23,11 @@ const Post = mongoose.model('Post', postSchema);
 
 // homepage
 app.get("/", function(req, res) {
-  res.render("home", {
-    posts: posts
-  });
+  Post.find({}, function(err, result){
+    res.render("home", {
+      posts: result
+    })
+  })
 });
 
 // books
@@ -47,7 +47,7 @@ app.get("/compose", function(req, res) {
 app.post("/compose", function(req, res) {
   const post = new Post({
     title: req.body.title,
-    article: req.body.content,
+    content: req.body.content,
   })
   post.save();
   res.redirect("/");
