@@ -1,11 +1,14 @@
 
 <%- include('partials/header'); -%>
 
-<h1>Home</h1>
+<h1>Coding Challenges</h1>
 
 <% posts.forEach(function(post){  %>
-<h2><%= post.title %></h2>
-<p class=post-article><%= post.content.substring(0,250) + " ..."%> <a href="/posts/<%=post._id%>"> Read more</a></p>
- <hr>
+<div class="new-post">
+  <h2><%= post.title %></h2>
+  <hr class="post-hr">
+  <p class=post-article><%= post.content.substring(0,250) + " ..."%> <a href="/posts/<%=post._id%>"> Read more</a></p>
+</div> 
+<hr>
 <% })  %>
 <%- include('partials/footer'); -%>
