@@ -98,7 +98,7 @@ color: #fff;
     height: 0px;
   }
   .nav > #nav-check:checked ~ .nav-links {
-    height: calc(100vh - 650px);
+    height: calc(30vh);
     overflow-y: auto;
   }
 }
