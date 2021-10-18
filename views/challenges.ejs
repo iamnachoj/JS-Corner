@@ -5,7 +5,7 @@
 <% posts.forEach(function(post){  %>
 <div class="new-post">
   <h2 class="post-title"><%= post.title %></h2>
-  <!-- <p class="date"><%= post.date %></p> -->
+  <p class="date"><%= post.date.toDateString() %></p>
   <hr class="post-hr">
   <p class=post-article><%= post.content.substring(0,250) + " ..."%> <a href="/posts/<%=post._id%>"> Read more</a></p>
 </div> 

@@ -56,8 +56,7 @@ color: #fff;
   display: inline;
 }
 .date{
-  display: inline;
-  margin-left: 4px;
+  font-size: 1.7rem;
 }
 hr {
   border: 0; border-top: 1px solid rgb(173, 173, 173);

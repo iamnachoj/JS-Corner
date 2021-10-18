@@ -64,7 +64,7 @@ app.get("/posts/:postId", function(req, res) {
     res.render("post", {
       postTitle: result.title,
       postArticle: result.content,
-      postDate: result.date
+      postDate: result.date.toDateString()
     });
   });
 });
