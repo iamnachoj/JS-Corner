@@ -3,6 +3,10 @@ body{
   background-color: #d6efc7;
 }
 
+h1{
+  font-weight: 700;
+}
+
 p {
   font-size: 2.4rem;
   line-height: 40px;
@@ -51,10 +55,13 @@ hr {
 }
 
 /* About */
-.about-pic{
-  position: relative;
-  margin:auto;
-  width: 70%;
+.about-container{
+ width: 90%;
+}
+.about-img{
+ width: 100%;
+ margin: auto;
+ margin-bottom: 40px;
 }
 /* Footer */
 
