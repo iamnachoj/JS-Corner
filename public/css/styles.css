@@ -52,6 +52,13 @@ color: #fff;
 }
 
 /* home */
+.post-title{
+  display: inline;
+}
+.date{
+  display: inline;
+  margin-left: 4px;
+}
 hr {
   border: 0; border-top: 1px solid rgb(173, 173, 173);
   margin: 50px 0;

@@ -17,7 +17,8 @@ mongoose.connect("mongodb://localhost:27017/blogDB", {useNewUrlParser: true});
 //Mongoose postSchema
 const postSchema = {
   title: String,
-  content: String
+  content: String,
+  date: Date
 }
 //Model
 const Post = mongoose.model('Post', postSchema);
@@ -49,6 +50,7 @@ app.post("/compose", function(req, res) {
   const post = new Post({ //stores a new Post on this constant. it takes the title and content from the form. 
     title: req.body.title,
     content: req.body.content,
+    date: req.body.date
   })
   post.save();
   res.redirect("/");
@@ -61,7 +63,8 @@ app.get("/posts/:postId", function(req, res) {
   Post.findOne({_id: requestedId}, function(err, result){
     res.render("post", {
       postTitle: result.title,
-      postArticle: result.content
+      postArticle: result.content,
+      postDate: result.date
     });
   });
 });
