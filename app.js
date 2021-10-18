@@ -25,16 +25,16 @@ const Post = mongoose.model('Post', postSchema);
 
 // homepage get route
 app.get("/", function(req, res) {
-  Post.find({}, function(err, result){
-    res.render("home", {
-      posts: result
-    })
-  })
+  res.render("home")
 });
 
 // books get route
-app.get("/books", function(req, res) {
-  res.render("books", {});
+app.get("/challenges", function(req, res) {
+  Post.find({}, function(err, result){
+    res.render("challenges", {
+      posts: result
+    })
+  })
 });
 
 // about get route
