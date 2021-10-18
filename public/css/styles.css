@@ -7,7 +7,9 @@ p {
   font-size: 2.4rem;
   line-height: 40px;
 }
-
+.dinamic-container{
+  min-height:900px;
+}
 /* header */
 .container{
   width: 50%;
@@ -22,7 +24,7 @@ p {
     padding-bottom: 15px;
     border: 0;
     border-radius: 0;
-    margin-bottom: 0;
+    margin-bottom: 50px;
     font-size: 12px;
     letter-spacing: 5px;
 }
@@ -43,24 +45,29 @@ color: #fff;
 }
 
 /* home */
+hr {
+  border: 0; border-top: 1px solid #ccc;
+  margin: 50px 0;
+}
 
+/* About */
+.about-pic{
+  position: relative;
+  margin:auto;
+  width: 70%;
+}
 /* Footer */
 
-
 .footer {
-	position: absolute;
-  top: 100%;
-  left:0;
-  right:0;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 50px;
   width: 100%;
 	background-color: #333;
 }
 
 .footer p {
   text-align: center;
-	margin-top: 25px;
+  margin-bottom: -10px;
+	padding: 60px;
 	font-size: 12px;
   color: #fff;
 }
