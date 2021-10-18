@@ -14,14 +14,15 @@ app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost:27017/blogDB", {useNewUrlParser: true}); 
 
+//Mongoose postSchema
 const postSchema = {
   title: String,
   content: String
 }
-
+//Model
 const Post = mongoose.model('Post', postSchema);
 
-// homepage
+// homepage get route
 app.get("/", function(req, res) {
   Post.find({}, function(err, result){
     res.render("home", {
@@ -30,22 +31,22 @@ app.get("/", function(req, res) {
   })
 });
 
-// books
+// books get route
 app.get("/books", function(req, res) {
   res.render("books", {});
 });
 
-// about
+// about get route
 app.get("/about", function(req, res) {
   res.render("about", {});
 });
 
-// compose
+// compose routes. Get and Post
 app.get("/compose", function(req, res) {
-  res.render("compose");
+  res.render("compose"); //render the compose form
 });
 app.post("/compose", function(req, res) {
-  const post = new Post({
+  const post = new Post({ //stores a new Post on this constant. it takes the title and content from the form. 
     title: req.body.title,
     content: req.body.content,
   })
@@ -54,17 +55,14 @@ app.post("/compose", function(req, res) {
 });
 
 // articles
-app.get("/posts/:postName", function(req, res) {
-  const requestedTitle = _.lowerCase(req.params.postName);
-
-  posts.forEach(function(post) {
-    const storedTitle = _.lowerCase(post.title);
-
-    if (requestedTitle === storedTitle) {
-      res.render("post",{
-        postTitle: post.title,
-        postArticle: post.article
-      });}
+app.get("/posts/:postId", function(req, res) {
+  const requestedId = req.params.postId;
+  
+  Post.findOne({_id: requestedId}, function(err, result){
+    res.render("post", {
+      postTitle: result.title,
+      postArticle: result.content
+    });
   });
 });
 
