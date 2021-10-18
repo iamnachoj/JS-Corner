@@ -7,14 +7,21 @@ const _ = require('lodash');
 const mongoose = require("mongoose");
 const app = express();
 
+//middleware
 app.set('view engine', 'ejs');
-
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.static("public"));
 
 let posts = [];
+
+mongoose.connect("mongodb://localhost:27017/blogDB", {useNewUrlParser: true}); 
+
+const postSchema = {
+  title: String,
+  content: String
+}
+
+const Post = mongoose.model('Post', postSchema);
 
 // homepage
 app.get("/", function(req, res) {
@@ -38,11 +45,11 @@ app.get("/compose", function(req, res) {
   res.render("compose");
 });
 app.post("/compose", function(req, res) {
-  const post = {
-    title: req.body.postTitle,
-    article: req.body.postArticle,
-  }
-  posts.push(post);
+  const post = new Post({
+    title: req.body.title,
+    article: req.body.content,
+  })
+  post.save();
   res.redirect("/");
 });
 
