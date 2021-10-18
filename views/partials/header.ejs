@@ -8,19 +8,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com"> <!-- Google Fonts: Montserrat, Mono Display. -->
   <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat:wght@400;500&display=swap&family=Bungee" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <div class="navbar-header">
-        <p class="navbar-brand"><a href="/">JS corner</a></p>
-      </div>
-        <ul class="nav navbar-nav navbar-right">
-          <!-- 6 -->
-          <li id="home"><a href="/">HOME</a></li>
-          <li id="about"><a href="/challenges">CODE</a></li>
-          <li id="contact"><a href="/about">ABOUT</a></li>
-        </ul>
-    </div>
-  </nav>
+  <link rel="stylesheet" href="/css/navbar.css">
 
+  
+    <div class="nav navbar-default">
+      <div class="container">
+      <div class="nav">
+       <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="navbar-header">
+            <p class="navbar-brand"><a href="/">JS corner</a></p>
+          </div>
+        </div>
+        
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="nav-links navbar-nav">
+          <a href="/">HOME</a>
+          <a href="/challenges">CODE</a>
+          <a href="/about">ABOUT</a>
+        </div>
+      </div>
+     </div>
+   </div>
   <body>
     <div class="container dinamic-container">
