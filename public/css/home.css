@@ -1,0 +1,28 @@
+.welcome-challenge{
+  text-align: justify;
+  padding: 20px 20px 20px 0 ;
+  clear: both;
+}
+
+.blog-img{
+  width: 50%;
+  float: left;
+  margin-right: 50px;
+}
+
+.challenge-date{
+ font-size: 100%;
+}
+
+section p {
+  font-size: 2rem;
+  line-height: 30px;
+}
+
+@media (max-width:1590px) {
+  .challenge-img{
+    width: 100%;
+    float:none;
+    margin: 50px auto;
+  }
+}
