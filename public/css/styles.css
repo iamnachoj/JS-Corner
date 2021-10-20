@@ -100,4 +100,11 @@ hr {
   .container{
     width: 90%;
   }
+  p {
+    font-size: 1.7rem;
+    line-height: 25px;
+  }
+  hr {
+    margin: 20px 0;
+  }
 }
