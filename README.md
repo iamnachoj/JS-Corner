@@ -2,6 +2,8 @@
 JS-Corner is a Javascript blog related to coding challenges and solutions. Here is where I post every JavaScript code challenge I manage to solve and how I did it. 
 It is very useful for any Junior Developer or Senior who needs to brush up some code challenges.
 
+try out in this <a href="https://js-corner.herokuapp.com/">link</a>
+
 ## Features
 - fully responsive built with EJS and CSS
 - Easy scalability thanks to the use of templating with EJS
