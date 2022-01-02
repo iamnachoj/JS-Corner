@@ -8,8 +8,12 @@
 <section class="welcome-challenge">
   <img class="blog-img" src="img/challenge.jpg" alt="hands typing on a PC with a lot of code in the screen">
   <h2>Ready for a challenge?</h2>
-  <% var date = new Date().toLocaleDateString() %>
-  <p class="challenge-date"><%= date %></p>
+  <% var date = new Date() %>
+  <% var days = 86400000 %>
+  <% twoDaysAgo = new Date(date - (2*days)) %>
+  <% var fifteenDaysAgo = new Date(date - (15*days)) %>
+  <% var monthAgo = new Date(date - (31*days)) %>
+  <p class="challenge-date"><%= date.toDateString() %></p>
   <p>Solving code challenges is the best practice method to become a top programmer. Find out about new JavaScript coding challenges here</p>
   <a class="btn btn-success" href="/challenges">Go to challenges</a>
 </section>
@@ -17,7 +21,7 @@
 <section class="welcome-challenge">
   <img class="blog-img" src="img/fibonacci.jpg" alt="hands typing on a PC with a lot of code in the screen">
   <h2>The Fibonacci algorithm</h2>
-  <p class="challenge-date">18 Oct 2021</p>
+  <p class="challenge-date"><%= fifteenDaysAgo.toDateString() %></p>
   <p>what's the real story behind this famous sequence? Many sources claim it was first "invented" by Leonardo Fibonacci. Would you be able
     to create a fibonacci sequence with vanilla JavaScript? see how here.
   </p>
@@ -27,7 +31,7 @@
 <section class="welcome-challenge">
   <img class="blog-img" src="https://lh3.googleusercontent.com/proxy/DrF2xA01i0y-To_Bbkl3DoHwBCWtxppTZ02xm3RchQS0DOFAKTP0KPyyJ0vdTHIuWNkWrKgLm1YVriNtjvbFEebRbjQ3cgD6b8Xw5agWYKsvvWdnzrD1fPt9VkVC" alt="hands typing on a PC with a lot of code in the screen">
   <h2>Class vs Components</h2>
-  <p class="challenge-date">2 Jan 2022</p>
+  <p class="challenge-date"><%= twoDaysAgo.toDateString() %></p>
   <p>What are the real differences between classes and functions in React?</p>
   <a class="btn btn-success" href="/posts/61d18bbbf3e82b849c0c1a4c">Read</a>
 </section>
@@ -35,7 +39,7 @@
 <section class="welcome-challenge">
   <img class="blog-img" src="img/code.jpg" alt="hands typing on a PC with a lot of code in the screen">
   <h2>Why JS corner?</h2>
-  <p class="challenge-date">24 Sep 2021</p>
+  <p class="challenge-date"><%= monthAgo.toDateString() %></p>
   <p>Here is all you need to know about this blog, its purpose and why it was created</p>
   <a class="btn btn-success" href="/about">Read</a>
 </section>
