@@ -12,8 +12,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.static("public"));
 
-// mongoose.connect("mongodb://localhost:27017/blogDB", {useNewUrlParser: true}); 
-mongoose.connect("mongodb+srv://Iamnachoj:" + process.env.MONGO_PASS + "@cluster0.slzvx.mongodb.net/blogDB", {useNewUrlParser: true}); 
+mongoose.connect("mongodb://localhost:27017/blogDB", {useNewUrlParser: true}); 
+//mongoose.connect("mongodb+srv://Iamnachoj:" + process.env.MONGO_PASS + "@cluster0.slzvx.mongodb.net/blogDB", {useNewUrlParser: true}); 
 
 //Mongoose postSchema
 const postSchema = {
