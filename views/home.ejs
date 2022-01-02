@@ -8,7 +8,8 @@
 <section class="welcome-challenge">
   <img class="blog-img" src="img/challenge.jpg" alt="hands typing on a PC with a lot of code in the screen">
   <h2>Ready for a challenge?</h2>
-  <p class="challenge-date">30 Oct 2021</p>
+  <% var date = new Date().toLocaleDateString() %>
+  <p class="challenge-date"><%= date %></p>
   <p>Solving code challenges is the best practice method to become a top programmer. Find out about new JavaScript coding challenges here</p>
   <a class="btn btn-success" href="/challenges">Go to challenges</a>
 </section>
